@@ -15,7 +15,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
                    <font color="white"><h4>{{ 'Dit zijn je gegevens!' }}</h4></font>
                     <hr>
                     <div class="form-group">

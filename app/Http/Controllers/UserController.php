@@ -83,10 +83,12 @@ class UserController extends Controller
         $userWeight = DB::table('weights')->where('user_id', '=', Auth::id())->pluck('userweight')->toArray();
 
         $chart = new UserWeight;
-        $chart->labels(['Weight']);
+        $chart->labels($userWeightLength);
         $chart->dataset('Gewicht', 'line', $userWeight);
 
         return view('choice', ['chart' => $chart])
+        ->with('userWeightLength', $userWeightLength)
+        ->with('userWeight', $userWeight);
         ->with('user', $user);
     }
 
